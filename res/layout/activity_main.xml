@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+    android:id="@+id/around"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -11,7 +11,7 @@
     tools:context=".MainActivity" >
 
     <LinearLayout
-        android:id="@+id/LinearLayout2"
+        android:id="@+id/timerController"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/separater" >
@@ -44,7 +44,7 @@
     </LinearLayout>
 
     <Chronometer
-        android:id="@+id/chronometer1"
+        android:id="@+id/chronometer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/separater"
@@ -52,6 +52,7 @@
         android:textSize="@dimen/chronometerSize" />
 
     <LinearLayout
+        android:id="@+id/life"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separater" >
