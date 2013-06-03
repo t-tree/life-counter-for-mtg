@@ -23,11 +23,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/separater"
             android:layout_weight="1"
+            android:background="@drawable/start_button"
             android:clickable="true"
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
             android:text="@string/start_button"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/reset_button"
@@ -37,10 +39,13 @@
             android:layout_margin="@dimen/separater"
             android:layout_marginRight="@dimen/separater"
             android:layout_weight="1"
+            android:background="@drawable/reset_button"
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
             android:text="@string/rest_button"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
+
     </LinearLayout>
 
     <Chronometer
@@ -48,7 +53,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/separater"
+        android:background="@drawable/gray_button_disabled"
         android:gravity="center_horizontal"
+        android:textColor="@color/black"
         android:textSize="@dimen/chronometerSize" />
 
     <LinearLayout
@@ -64,10 +71,12 @@
             android:layout_margin="@dimen/separater"
             android:layout_marginRight="@dimen/separater"
             android:layout_weight="1"
+            android:background="@drawable/black_button_default"
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
             android:text="@string/twenty"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/second_player_life"
@@ -75,10 +84,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/separater"
             android:layout_weight="1"
+            android:background="@drawable/black_button_default"
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
             android:text="@string/twenty"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 
 </LinearLayout>
