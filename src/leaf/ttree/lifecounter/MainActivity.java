@@ -2,6 +2,7 @@ package leaf.ttree.lifecounter;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		chrono = (Chronometer) this.findViewById(R.id.chronometer);
 	}
 
@@ -27,15 +28,20 @@ public class MainActivity extends Activity {
 	}
 
 	public void clickStartPauseButton(View v) {
+
 		chrono.start();
-		
+
 		Button startPauseButton = getStartStopButton();
 		startPauseButton.setText(R.string.pause_button);
-		
+		startPauseButton.setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.pause_button));
+		int padding = getResources().getDimensionPixelSize(R.dimen.padding);
+		startPauseButton.setPadding(padding, padding, padding, padding);
 	}
-	
-	public Button getStartStopButton(){
-		return (Button)this.findViewById(R.id.start_pause_button);
+
+	public Button getStartStopButton() {
+		return (Button) this.findViewById(R.id.start_pause_button);
+
 	}
 
 }
