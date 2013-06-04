@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Chronometer;
 
 public class MainActivity extends Activity {
@@ -27,6 +28,14 @@ public class MainActivity extends Activity {
 
 	public void clickStartPauseButton(View v) {
 		chrono.start();
+		
+		Button startPauseButton = getStartStopButton();
+		startPauseButton.setText(R.string.pause_button);
+		
+	}
+	
+	public Button getStartStopButton(){
+		return (Button)this.findViewById(R.id.start_pause_button);
 	}
 
 }
