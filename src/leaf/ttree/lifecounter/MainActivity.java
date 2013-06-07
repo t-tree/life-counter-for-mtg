@@ -1,6 +1,7 @@
 package leaf.ttree.lifecounter;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
@@ -28,7 +29,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void clickStartPauseButton(View v) {
-
+		chrono.setBase(SystemClock.elapsedRealtime());
 		chrono.start();
 
 		Button startPauseButton = getStartStopButton();
