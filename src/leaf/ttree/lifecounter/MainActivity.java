@@ -11,14 +11,15 @@ import android.widget.Chronometer;
 
 public class MainActivity extends Activity {
 
-	Chronometer chrono;
+	ControlTimer controlTimer;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		chrono = (Chronometer) this.findViewById(R.id.chronometer);
+		controlTimer = new ControlTimer(
+				(Chronometer) this.findViewById(R.id.chronometer));
 	}
 
 	@Override
@@ -29,8 +30,11 @@ public class MainActivity extends Activity {
 	}
 
 	public void clickStartPauseButton(View v) {
-		chrono.setBase(SystemClock.elapsedRealtime());
-		chrono.start();
+		if (controlTimer.isStop()) {
+			controlTimer.startTimer();
+		} else {
+			controlTimer.toggleCountupPause();
+		}
 
 		Button startPauseButton = getStartStopButton();
 		startPauseButton.setText(R.string.pause_button);
