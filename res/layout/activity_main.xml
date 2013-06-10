@@ -42,6 +42,7 @@
             android:layout_weight="1"
             android:background="@drawable/reset_button"
             android:gravity="center_horizontal"
+            android:onClick="clickResetButton"
             android:padding="@dimen/padding"
             android:text="@string/reset_button"
             android:textAppearance="?android:attr/textAppearanceMedium"

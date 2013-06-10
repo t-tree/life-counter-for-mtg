@@ -56,6 +56,13 @@ public class MainActivity extends Activity {
 		targetButton.setPadding(padding, padding, padding, padding);
 	}
 
+	public void clickResetButton(View v) {
+		controlTimer.resetTimer();
+		changeButtonLayout(getStartStopButton(), R.string.start_button,
+				R.drawable.start_button);
+
+	}
+
 	public Button getStartStopButton() {
 		return (Button) this.findViewById(R.id.start_pause_button);
 
