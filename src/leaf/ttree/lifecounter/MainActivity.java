@@ -3,6 +3,7 @@ package leaf.ttree.lifecounter;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.app.Activity;
+import android.content.res.Resources.NotFoundException;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -36,12 +37,23 @@ public class MainActivity extends Activity {
 			controlTimer.toggleCountupPause();
 		}
 
-		Button startPauseButton = getStartStopButton();
-		startPauseButton.setText(R.string.pause_button);
-		startPauseButton.setBackgroundDrawable(getResources().getDrawable(
-				R.drawable.pause_button));
+		if (controlTimer.isCountup()) {
+			changeButtonLayout(getStartStopButton(), R.string.pause_button,
+					R.drawable.pause_button);
+		} else if (controlTimer.isPause()) {
+			changeButtonLayout(getStartStopButton(), R.string.restart_button,
+					R.drawable.start_button);
+		}
+	}
+
+	private void changeButtonLayout(Button targetButton, int buttonID,
+			int drawableID) {
+
+		targetButton.setText(buttonID);
+		targetButton.setBackgroundDrawable(getResources().getDrawable(
+				drawableID));
 		int padding = getResources().getDimensionPixelSize(R.dimen.padding);
-		startPauseButton.setPadding(padding, padding, padding, padding);
+		targetButton.setPadding(padding, padding, padding, padding);
 	}
 
 	public Button getStartStopButton() {
